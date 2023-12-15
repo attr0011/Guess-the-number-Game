@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Game Over!</h2>
+        <p>Your score: {{ score }}</p>
+        <form action="/game_over/{{ score }}" method="post">
+            <label for="player_name">Enter your name:</label>
+            <input type="text" id="player_name" name="player_name" required>
+            <br>
+            <input type="submit" value="Submit Score">
+        </form>
+        <a href="/view_scores">View Scores</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .game-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        p {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>Guess the Number</h2>
+        <form action="/play_game" method="post">
+            <label for="user_guess">Your Guess:</label>
+            <input type="number" id="user_guess" name="user_guess" required>
+            <br>
+            <input type="submit" value="Submit Guess">
+        </form>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

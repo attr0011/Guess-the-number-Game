@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Scores</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+    <h2>Scores Board</h2>
+    <table border="1">
+        <tr>
+            <th>Player Name</th>
+            <th>Score</th>
+        </tr>
+        {% for score in scores %}
+            <tr>
+                <td>{{ score[1] }}</td>
+                <td>{{ score[2] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>
